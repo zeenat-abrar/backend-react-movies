@@ -25,7 +25,7 @@ namespace MoviesAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            var inMemoryRepository = new InMemoryRepository();
+           
 
             repository.GetAllGenres();
 
