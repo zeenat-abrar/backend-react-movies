@@ -10,9 +10,11 @@ namespace MoviesAPI.Controllers
     public class GenresController:ControllerBase
     {
         private readonly IRepository repository;
-        public GenresController(IRepository repository) 
+        private readonly ILogger<GenresController> logger;
+        public GenresController(IRepository repository, ILogger<GenresController> logger) 
         {
         this.repository = repository;
+            this.logger = logger;
         }
 
         [HttpGet]  //api/genre
@@ -20,21 +22,20 @@ namespace MoviesAPI.Controllers
         [HttpGet("/allgenres")]  //allgenres
         public async Task<ActionResult<List<Genre>>> Get()
         {
+            logger.LogInformation("Getting all the genres");
             return await repository.GetAllGenres();
         }
-        [HttpGet("{Id:int}/{param2=felipe}")]   //api/genres/example
-        public ActionResult<Genre> Get(int Id, [FromServices] string param2)
+        [HttpGet("{Id:int}", Name ="getGenre")]   //api/genres/example
+        public ActionResult<Genre> Get(int Id, string param2)
         {
 
-            if(!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
+            logger.LogDebug("get by Id method executing...");
             var genre = repository.GetGenreById(Id);
 
-            if(genre == null)
+            if (genre == null)
             {
+                logger.LogWarning($"Genre with Id {Id} not found");
+                logger.LogError("this is an error");
                return NotFound();
             }
 
