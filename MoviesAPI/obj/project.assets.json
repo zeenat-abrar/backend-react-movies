@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zeenat\\source\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Zeenat\\source\\backend-react-movies\\MoviesAPI\\MoviesAPI.csproj",
       "projectName": "MoviesAPI",
-      "projectPath": "C:\\Users\\Zeenat\\source\\MoviesAPI\\MoviesAPI\\MoviesAPI.csproj",
+      "projectPath": "C:\\Users\\Zeenat\\source\\backend-react-movies\\MoviesAPI\\MoviesAPI.csproj",
       "packagesPath": "C:\\Users\\Zeenat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zeenat\\source\\MoviesAPI\\MoviesAPI\\obj\\",
+      "outputPath": "C:\\Users\\Zeenat\\source\\backend-react-movies\\MoviesAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zeenat\\AppData\\Roaming\\NuGet\\NuGet.Config",
