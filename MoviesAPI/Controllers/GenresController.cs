@@ -12,23 +12,18 @@ namespace MoviesAPI.Controllers
     [ApiController]
     public class GenresController:ControllerBase
     {
-        private readonly IRepository repository;
         private readonly ILogger<GenresController> logger;
-        public GenresController(IRepository repository, ILogger<GenresController> logger) 
+        public GenresController(ILogger<GenresController> logger) 
         {
-        this.repository = repository;
             this.logger = logger;
         }
 
         [HttpGet]  //api/genre
-        [HttpGet("list")] //api/genres/list
-        [HttpGet("/allgenres")]  //allgenres
-        //[ResponseCache(Duration =60)]
-        [ServiceFilter(typeof(MyActionFilter))]
+        
         public async Task<ActionResult<List<Genre>>> Get()
         {
             logger.LogInformation("Getting all the genres");
-            return await repository.GetAllGenres();
+            return new List<Genre>() { new Genre() { Id = 1, Name="Comedy" } };
         }
         [HttpGet("{Id:int}", Name ="getGenre")]   //api/genres/example
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
