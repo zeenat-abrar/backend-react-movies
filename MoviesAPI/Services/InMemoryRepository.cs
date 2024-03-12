@@ -13,7 +13,7 @@ namespace MoviesAPI.Services
                 new Genre(){Id=1, Name="Comedy"},
                 new Genre(){Id=2, Name="Action"}
             };
-
+            this.logger = logger;
         }
         public async Task<List<Genre>> GetAllGenres()
         {
